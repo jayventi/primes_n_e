@@ -3,6 +3,9 @@ generates a sieve list of prime numbers up to a maximum given as a parameter
 primes_sieve_generator
 based on ideas from:
 https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
+
+Jay Venti
+September 8th, 2016
 """
 
 import math
@@ -67,7 +70,7 @@ if __name__ == '__main__':
 
 
 """
-for next_prime < 40000000
+for max_prime = 40000000
 
 ('total', 47088408550139L)
 ('prime count', 2433655)
