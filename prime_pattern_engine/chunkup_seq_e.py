@@ -72,7 +72,7 @@ targeted_seqs_e_2_file(targets, max_prime, work_dir)
 
 
 ##################################################
-# quickie unit test for Jace on consistency on targets d2 array
+# quickie unit test for json on consistency on targets d2 array
 
 file_path_name = "{0}targeted_seqs_e_{1}.json".format(work_dir, max_prime)
 with open(file_path_name) as json_data:
@@ -81,6 +81,7 @@ with open(file_path_name) as json_data:
 # does reconstituted matched original
 print ('Does reconstituted json matched original', targeted == targets)
 
+# inspect some of the first entries in table targeted
 # for seq_len in range(1, max_sequence_size+1):
 #     for count in range(1, 100):
 #         print 'seq_len', seq_len, 'count', count, \

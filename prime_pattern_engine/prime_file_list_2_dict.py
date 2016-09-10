@@ -3,6 +3,7 @@ read in the primes_sieve_n file and convert to dictionary
 right output to
 prime_file_list_2_dict
 """
+
 import json
 
 
@@ -29,7 +30,7 @@ def write_sieve_dict_2_file(prime_dict, max_prime, work_dir):
 
 if __name__ == '__main__':
     # configuration parameters
-    max_prime = 32000000
+    max_prime = 1000
     work_dir = 'work_files/'
 
     prime_list = read_primes_sieve_from_file(max_prime, work_dir)
