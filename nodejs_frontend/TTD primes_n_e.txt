@@ -1,0 +1,31 @@
+TTD primes_n_e
+
+
+TTD for primes_n_e
+main project names
+	project directory 	\work\github-root\primes_n_e\nodejs_frontend
+	project datafile 	prime_n_e_12-5.json
+	main app project 	name prime_n_e
+	id= 'prodImgLib'
+
+
+clone file two new directories rewrite primary app names
+
+install node npm 
+install and datafile test on server
+controller
+	dataserver
+setup r
+get cloned a project running
+
+build out new products angular pages for proof of concept work
+
+add support for product dashboard and setting in the top menu
+
+add controller for products 
+proof of concept work
+build dummy product data object in the controller   [{name:, imageUrl:, description:   																																		inStockQuant:,created_at},{}] 
+	renter angular code fragment to 1) render image from url, 2) iterate from a starting point to ending point using 'repeat' or an alternative direct.
+		> MyModel.find(query, fields, { skip: 10, limit: 5 }, function(err, results) { ... });
+
+colection 

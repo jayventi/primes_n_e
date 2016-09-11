@@ -1,0 +1,41 @@
+<div  ng-controller='ordersController'>	
+	<form>
+		<h2  id="products">Add a New Order</h2>
+		<!-- <div class='duplicateError' ng-if='newCustomer.isDuplicate'>Error: Duplicate name!</div> -->			
+		<div ng-init="qunt_list =[1,2,3,4,5,6,7]">	  		
+			<p>Customer</p>
+			<select  ng-model='newOrder._customer'>
+				<option ng-repeat="cust in customers" value="{{cust._id}}">{{cust.name}}</option>
+			</select>			
+			<p>product</p>
+			<select  ng-model='newOrder.product'>
+				<option ng-repeat="product in productsAll" value="{{product._id}}">{{product.name}}</option>
+			</select>	
+			<p>Order</p>
+			<select  ng-model='newOrder.quantity'>
+				<option ng-repeat="qunt in qunt_list" value="{{qunt}}">{{qunt}}</option>
+			</select>
+			<input  type='submit' value='Order' ng-click='addOrder()'>
+		</div>   	
+	</form>
+	<input id="search_input" type="text" ng-model="order_filter" placeholder="Order filter">			 
+	<div id='table_container' >
+		<table class="pure-table">
+			<tr  >
+				<th>Customer Name</th>
+				<th>Product</th>				
+				<th>Quantity</th>
+				<th>Date</th>
+			</tr>
+			<tr ng-repeat="order in orders | filter: order_filter | orderBy:'createOn':true">
+				<td> <span ng-bind='order._customer.name'></span> </td>
+				<td> <span ng-bind='order.product[0].name'></span> </td>
+				<td> <span ng-bind='order.quantity'></span> </td>
+				<td> 
+					<span ng-bind='order.createOn | dateSuffix'></span>, <span ng-bind='order.createOn | date:"yyyy h:mm:ssa" '></span>   
+				</td>
+				
+			</tr>					
+		</table>
+	</div>
+</div>

@@ -1,9 +1,9 @@
 """
 Test target sequences to determine if they are prime build lookup table
 Using pre-created target sequences in e determine which sequences are prime
-numbers in the consecutive order in which they appear. Build a array
+numbers in consecutive order in which they appear. Build a array
 of these prime numbers that appearens in order.
-Only hunt forth the first n prime, given by n_primes, of a given length up
+Only hunt for the first n prime, given by n_primes, of a given length up
 to the maximum sequence length, given by max_sequence_size.
 
 n_prime_n_e

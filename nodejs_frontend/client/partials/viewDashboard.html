@@ -1,0 +1,50 @@
+<div  id= 'protucte_main' ng-controller='dashboardController'>
+	<div id = 'horzInputArea'	>
+		<!-- <form> -->	
+			<input class="horzInputItems" type="text" 
+							ng-model="order_filter" placeholder="Product filter...">
+	</div>			 
+	<div id='prod_container'> <!-- dashboard_container -->
+		<!-- Products -->
+		<div class='dashboard_unit'>
+			<h3><b><u>New Products</u></b></h3>
+			<div class ='product_box'  
+				 	ng-repeat="product in productPage | filter: order_filter">				
+					<!--  | orderBy:'created_at':true"> -->
+				<img class='prodImage' ng-src="{{product.imagUrl}}" alt="url Image"/>
+				<span ng-bind='product.name'></span><br>
+					( <span ng-bind='product.quantity'></span> left)
+				<!-- <span ng-bind='order.created_at | dateSuffix'></span>,    -->
+				<span ng-bind='product.createdOn | date:"yyyy h:mm:ssa" '></span> 
+			</div>	
+			<a class='morePages' href="#/partialDashboard" ng-click='nextProdPage()'>Show more...</a>
+		</div>
+		<!-- Orders -->
+		<div class='dashboard_unit'>
+			<h3><b><u>Recent Orders</u></b></h3>
+			<div class ='data_row' ng-repeat="order in orderPage" >
+				<span ng-bind='order._customer.name'></span> purchased 
+				<span ng-bind='order.quantity'></span>
+				<span ng-bind='order.product[0].name'></span> ...
+				<span ng-bind='order.createOn | sinceNow '></span>
+			</div>
+			<a class='morePages' href="#/partialDashboard" ng-click='nextOrderPage()'>
+				Show more...
+			</a>
+		</div>
+		<!-- Customers -->
+		<div class='dashboard_unit'> 
+			<h3><b><u>New Customers</u></b></h3>
+			<div class ='data_row' ng-repeat="customer in customerPage" >
+				<div class='custAbvatar'> </div>
+				<span ng-bind='customer.name'></span> joned the store.
+				<!-- <span>{{ customer.created_at | sinceNow }}</span> -->
+				<span ng-bind='customer.created_at | sinceNow '></span>
+			</div>
+			<a class='morePages' href="#/partialDashboard" ng-click='nextCustPage()'>
+				Show more...
+			</a>
+		</div>
+
+	</div>   <!-- end of dashboard_container -->  
+</div>

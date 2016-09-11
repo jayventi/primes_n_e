@@ -12,8 +12,6 @@ Jay Venti
 September 8th, 2016
 """
 
-#import string
-#import os
 import json
 
 

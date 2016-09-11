@@ -1,0 +1,29 @@
+
+<div  ng-controller='singleController'> 
+    <form>
+        <h2  id="products">Locate Prime Numbers in  e</h2>
+        <!-- <div class='duplicateError' ng-if='newCustomer.isDuplicate'>Error: Duplicate name!</div> -->
+        <div id="primeform">
+            Length of prime: <input type='text' ng-model='getPrime.len'> <!-- </br></br> -->
+            Order in e:      <input type='text' ng-model='getPrime.ord'> 
+            <input  class="button" type='Submit' value='submit' 
+                ng-click='getSingle()'>
+        </div>
+    </form>
+                 
+    <div id='table_container' >
+        <table class="pure-table">
+            <tr  >
+                <th>prime number</th>
+                <th>location in e</th>
+            </tr>
+            <tr ng-repeat="prime in primes">
+                <td> <span ng-bind='prime.seq'></span> </td>
+                <td> <span ng-bind='prime.pos'></span> </td>
+                <!-- <td>
+                    <a class="button" href="#/partialCustomers" ng-click= 'removeCustomer(customer)'>Remove</a>
+                </td> -->
+            </tr>
+        </table>
+    </div>
+</div> <!-- end of ng-controller='customersController' -->      

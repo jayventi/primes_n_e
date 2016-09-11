@@ -1,0 +1,231 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#page{
+    color: #000;
+}
+
+
+#main_container {
+    width:900px;
+    /*height: 430px;*/
+    font-family: arial, verdana, sans-serif;
+    font-size: 11px;
+    vertical-align:0;
+    margin: 0 auto;
+    background-color: #fEfEfE;
+    display: block;
+    }
+
+#heder {
+    background-color: #c1c1c1;
+    width:880px;
+    height: 40px;
+    display: block;
+    margin: 0px;
+    padding: 10px;
+    }
+
+#heder h2 {
+    text-align: center;
+    margin: 10px;
+    padding: 0px;
+    }
+
+#products {
+    margin: 20px 0px 10px 10px;
+    padding: 0px 0px 0px 0px;   
+}
+#add_new {
+    margin: 20px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;   
+}
+
+#table_container {
+    width:880px;
+    margin: 0px 0px;
+    padding: 0px 0px 0px 10px;
+    
+}
+
+.pure-table {
+    width:50%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+.pure-table th{
+    background-color: #c1c1c1;
+}
+
+.pure-table th, .pure-table td {
+    padding: 0.5em 1em;
+}
+.pure-table td, .pure-table th {
+    border-left: 1px solid #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+   }
+
+
+.button { 
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  margin: 0px 0px 0px 5px; 
+}
+
+#footer {
+    background-color: #c1c1c1;
+    margin: 0px;
+    width:880px;
+    height: 40px;
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    }
+
+.theinfo {
+    margin: 5px 0px 5px 10px;
+    padding: 0px 0px 0px 0px;   
+}
+
+
+.colorline1 {
+    color: red;
+}
+.colorline2 {
+    color: green;
+}
+
+#search_input {
+    width:155px;
+    display: block;
+    margin: 5px 0px 5px 720px;
+    padding: 2px 3px;   
+}
+
+.duplicateError {
+    font-size: 12px;
+    color: red;
+    width:255px;
+    display: block;
+    margin: 5px 0px 5px 35px;
+    padding: 5px 3px;   
+}
+
+#protucte_main {
+    width: 890px;
+    display: inline-block;
+    /*vertical-align:0;*/
+    margin: 0px;
+    padding: 0px;
+    /*border-style: solid;
+  border-width: 2px;*/
+}
+#horzInputArea{
+    width: 25%;
+    display: inline-block;
+    /*vertical-align:0;*/
+    vertical-align: top;
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+    /*border-style: solid;
+  border-width: 2px;*/
+}
+
+#prod_container {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    /*vertical-align:0;*/
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+/*  border-style: solid;
+  border-width: 2px*/;
+}
+.product_box {
+    width:  100px;
+    height: 110px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 4px;
+    /*border-style: solid;
+  border-width: 2px;*/
+}
+.greenbut {
+    background-color: green;
+    color: white;
+}
+.horzInputItems {
+    width:  150px;
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+}
+.horzInputText {
+    resize: none;
+    width: 150px;
+    height: 80px;
+    border: 1px solid #bbbbbb;
+    padding: 5px;
+    /*font-family: Tahoma, sans-serif;*/    
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+.prodImage {
+    width:  90px;
+    height: 90px;
+    margin:  0px;
+    padding: 0px;
+    border: 1px solid #dddddd;
+}
+.morePages {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+.dashboard_unit {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px 0px;
+}
+.custAbvatar  {
+    width:  16px;
+    height: 16px;   
+    display: inline-block;
+    margin: 0px;
+    border: 1px solid #aaaaaa;
+}
+.data_row {
+    height: 20px;
+    font-size: 13px;
+    display: block;
+    margin: 4px 4px;
+}
+
+#primeform {
+    /*height: 50px;*/
+    /*width:30%;*/
+    font-size: 16px;
+    display: block;
+    margin: 20px 10px;
+}
