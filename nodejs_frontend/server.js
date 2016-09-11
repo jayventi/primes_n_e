@@ -22,14 +22,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // setup static content route
 app.use(express.static(path.join(__dirname, "./client")));
 
-// load prime number data from json data file 
-
 
 // requires and runs code in routes.js file, passes it needed scope(s) 
 // deligate setting up our routing rules there
 // will call nodejs controllers and routing rules
 require('./server/config/routes.js')(app,bodyParser,tools);
 
+console.log("currently running os: "+ process.platform);
 
 // Start nodejs as an api server, listen on working_port
 app.listen(working_port, function() {

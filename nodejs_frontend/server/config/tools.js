@@ -1,8 +1,14 @@
 // tools.js
 module.exports = {
-  fullWinPath: function ( posixPath ) {  
+  // full windows friendly path, such as function  of running os
+  fullWinPath: function ( posixPath ) {
 		var path = require('path');
 		var appDir = path.dirname(require.main.filename);
-		return (appDir+posixPath).split('/').join('\\');
+		if (process.platform == 'win32'){
+			osPathChr = '\\';
+		} else {
+			osPathChr = '/';
+		}
+		return (appDir+posixPath).split('/').join(osPathChr);
 	}
 };
