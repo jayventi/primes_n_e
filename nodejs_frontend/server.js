@@ -28,8 +28,8 @@ app.use(express.static(path.join(__dirname, "./client")));
 // will call nodejs controllers and routing rules
 require('./server/config/routes.js')(app,bodyParser,tools);
 
-console.log("currently running os: "+ process.platform);
-
+console.log("currently running os: " + process.platform);
+console.log("current node vertion: "+ process.versions.node);
 // Start nodejs as an api server, listen on working_port
 app.listen(working_port, function() {
 	console.log("listening on port "+ working_port);
