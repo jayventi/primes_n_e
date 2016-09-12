@@ -1,7 +1,7 @@
 // // CONFIG and UTILITYS
 
 // SETUP main angular module
-var primes_n_e = angular.module('primes_n_e', ['ngRoute']);
+var primes_n_e = angular.module('primes_n_e', ['ngRoute', 'ngFileUpload']);
 
 // SETUP utilitys
 

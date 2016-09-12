@@ -1,19 +1,28 @@
 
 <div  ng-controller='uplodeController'> 
-    <form id      =  "uploadForm"
-        enctype   =  "multipart/form-data"
-        action    =  "upload"
-        method    =  "post"
+    <form id      =  "uploadForm" name="upload_form"
+        
     >
+    <!-- enctype   =  "multipart/form-data"
+        action    =  "upload"
+        method    =  "post" -->
         <div id = "uploadInfoHeader">
         <h2>Angular Node File Upload using ng-file-upload</h2>
         <h3>Uplode csv file containing length and order parameters for primes in e</h3>
         <!-- <div class='duplicateError' ng-if='xx.xxx'>Error: out fo bouds name!</div> -->
         </div>
         <div id="primeform">
-            <input type="file" name="file" />Upload
+            <input 
+            type="file" 
+            ngf-select 
+            ng-model="up.file" 
+            name="file" 
+            ngf-pattern="'.csv'"
+            accept=".csv" 
+            ngf-max-size="1MB" 
+            />Upload
             <input class="button" type="submit" value="Upload" 
-                name="submit" '> <!-- ng-click='getSet() -->
+                name="submit" ng-click='getSetUplode()'> <!--  -->
         </div>
     </form>
                  

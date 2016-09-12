@@ -33,11 +33,10 @@ primes_n_e.controller('singleController',
         // clear the form values
         $scope.getPrime = {};
     };
-
 });
 
 primes_n_e.controller('uplodeController',
-    function ($scope, singleFactory, sysStateFactory){
+    function ($scope, Upload, singleFactory, sysStateFactory){
     $scope.primes = [];
 
     // setup sysState 
@@ -47,6 +46,23 @@ primes_n_e.controller('uplodeController',
     });
     $scope.sysState.state = 'set';
 
-    $scope.getSet = function (){
+    $scope.getSetUplode = function (){
+        Upload.upload({
+                url: 'http://localhost:8078/upload', //webAPI exposed to upload the file
+                data:{file:$scope.up.file} //pass file as data, should be user ng-model
+            }).then(function (resp) { //upload function returns a promise                
+                if(resp.data.error_code === 0){ //validate success
+                    console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
+                for (var i = 0; i < resp.data.data.length; i++) {
+                    $scope.primes.push(resp.data.data[i]);
+                }
+                } else {
+                    onsole.log('an error occured');
+                }
+            });
+
+
+        // clear the form values
+        //$scope.up.file = {};
     };
 });
