@@ -42,7 +42,7 @@ To run the website no backend code is required the desired primes are stored in 
 3) Install nodejs packages, in the nodejs_frontend directory execute
  npm install. A package.json file is provided.
 
-4) primes_n_e is now ready to run use nodemon server.js
+4) primes_n_e is now ready to run use node server.js
 
 ###TODO###
 Convert utilities into objects or procedures and assemble into one file with a linear execution order. Coalesce all configuration values into one file. 
