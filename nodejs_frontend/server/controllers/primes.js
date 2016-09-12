@@ -59,19 +59,19 @@ module.exports =  {
                 return;
             }
             // extract data from file and convert from csv to json
-            console.log("./uploads/"+req.file.filename );
+            console.log("Uploded file: ./uploads/"+req.file.filename );
             converter.fromFile("./uploads/"+req.file.filename,function(err,result){
                 ///console.log(result );
                 // iterate through csv list extract parameters
                 primeRes = [];
                 for (var i = 0; i < result.length; i++) {
-                    console.log(result[i].field1 );
+                    ///console.log(result[i].field1 );
                     // build list of results using lookupPrimeData
                     primeRes[i]=(lookupPrimeData(result[i].field1, result[i].field2));
                 }
                 ///console.log( primeRes );
+                res.json({error_code:0,err_desc:null,data:primeRes});
             });
-            res.json({error_code:0,data:primeRes});
         });
     },
 };
