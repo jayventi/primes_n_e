@@ -13,7 +13,7 @@ primes_n_e.config(function ($routeProvider) {
                 templateUrl: 'partials/viewPrimes.html' // our default
         })
         .when('/partialUpload',{
-             templateUrl: 'partials/viewUploadSet.html'
+             templateUrl: 'partials/viewUplodeSet.html'
         })
         .otherwise({
             redirectTo: '/'

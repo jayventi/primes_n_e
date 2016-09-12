@@ -1,0 +1,32 @@
+
+<div  ng-controller='uplodeController'> 
+    <form id      =  "uploadForm"
+        enctype   =  "multipart/form-data"
+        action    =  "upload"
+        method    =  "post"
+>
+        <h2  id="products">Uplode csv of prime Numbers to locate in  e</h2>
+        <!-- <div class='duplicateError' ng-if='newCustomer.isDuplicate'>Error: Duplicate name!</div> -->
+        <div id="primeform">
+            <input type="file" name="file" />Upload
+            <input class="button" type="submit" value="Upload" 
+                name="submit" ng-click='getSet()'>
+        </div>
+    </form>
+                 
+    <div id='table_container' >
+        <table class="pure-table">
+            <tr  >
+                <th>key</th>
+                <th>prime number</th>
+                <th>location in e</th>
+            </tr>
+            <tr ng-repeat="prime in primes">
+                <td> <span ng-bind='prime.key'></span> </td>
+                <td> <span ng-bind='prime.seq'></span> </td>
+                <td> <span ng-bind='prime.pos'></span> </td>
+                
+            </tr>
+        </table>
+    </div>
+</div> <!-- end of ng-controller='singleController' -->      

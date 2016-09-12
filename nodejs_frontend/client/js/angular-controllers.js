@@ -34,6 +34,19 @@ primes_n_e.controller('singleController',
         $scope.getPrime = {};
     };
 
-
 });
 
+primes_n_e.controller('uplodeController',
+    function ($scope, singleFactory, sysStateFactory){
+    $scope.primes = [];
+
+    // setup sysState 
+    $scope.sysState = {};
+    sysStateFactory.getSysState(function (data){
+        $scope.sysState = data;
+    });
+    $scope.sysState.state = 'set';
+
+    $scope.getSet = function (){
+    };
+});
