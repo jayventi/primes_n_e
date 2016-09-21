@@ -24,7 +24,7 @@ primes_n_e.controller('singleController',
     $scope.sysState.state = 'single';
 
     $scope.getSingle = function (){
-        // now use singleFactory.getSingle         
+        // now use singleFactory.getSingle 
         singleFactory.getSingle($scope.getPrime, function (responseData){
             console.log('> ... RETURNED FROM FACTORY AFTER getSingle');
             $scope.primes = [];

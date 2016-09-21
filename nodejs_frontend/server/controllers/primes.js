@@ -32,7 +32,6 @@ function lookupPrimeData(len, ord) {
     var maxLen = 12,
         maxOrd = 5;
     var results = {};
-        //console.log("len "+ len +" ord "+ ord );
     if(len >= 1 && len <=maxLen && ord >= 1 && ord <=maxOrd){
         var key = len + '-' + ord;
             results = primeData[key];
@@ -46,7 +45,7 @@ function lookupPrimeData(len, ord) {
 
 module.exports =  {
     getPrimeData: function (req, res) {
-        var results = lookupPrimeData(req.body.len, req.body.len);
+        var results = lookupPrimeData(req.body.len, req.body.ord);
         if(results!={}){
         res.json(results);
         }
