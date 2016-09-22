@@ -4,7 +4,7 @@
 // load primeData from file
 var fs = require('fs');
 var primeData = JSON.parse(
-        fs.readFileSync('./server/datafiles/prime_n_e_12-5.json', 'utf8'));
+        fs.readFileSync('./server/datafiles/prime_n_e_12-20.json', 'utf8'));
 
 // setup a csv to json converter
 var Converter = require("csvtojson").Converter;
@@ -30,9 +30,10 @@ var upload = multer({
 
 function lookupPrimeData(len, ord) {
     var maxLen = 12,
-        maxOrd = 5;
+        maxOrd = 9;
     var results = {};
-    if(len >= 1 && len <=maxLen && ord >= 1 && ord <=maxOrd){
+    if(len >= 1 && len <=maxLen
+       && ord >= 1 && ord <=maxOrd){
         var key = len + '-' + ord;
             results = primeData[key];
             results.key = key;
@@ -66,7 +67,7 @@ module.exports =  {
                 for (var i = 0; i < result.length; i++) {
                     ///console.log(result[i].field1 );
                     // build list of results using lookupPrimeData
-                    primeRes[i]=(lookupPrimeData(result[i].field1, result[i].field2));
+                    primeRes[i]=(lookupPrimeData(result[i].field2, result[i].field1));
                 }
                 ///console.log( primeRes );
                 res.json({error_code:0,err_desc:null,data:primeRes});

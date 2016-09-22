@@ -108,4 +108,3 @@ for seq_len in range(1, max_sequence_size+1):
 
 
 prime_n_e_2_file(prime_n_e, work_dir, max_sequence_size, n_primes)
-
