@@ -16,9 +16,9 @@ def read_primes_sieve_from_file(max_prime, work_dir):
 
 
 def prime_list_2_dict(prime_list):
-    prime_dict = {}
-    for i in range(len(prime_list)):
-        prime_dict[prime_list[i]] = i
+    prime_dict = {"2": 0}
+    for i in range(0, len(prime_list)):
+        prime_dict[prime_list[i]] = i + 1
     return prime_dict
 
 
@@ -30,7 +30,7 @@ def write_sieve_dict_2_file(prime_dict, max_prime, work_dir):
 
 if __name__ == '__main__':
     # configuration parameters
-    max_prime = 1000
+    max_prime = 32000000
     work_dir = 'work_files/'
 
     prime_list = read_primes_sieve_from_file(max_prime, work_dir)

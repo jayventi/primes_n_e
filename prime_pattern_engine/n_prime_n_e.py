@@ -103,8 +103,8 @@ for seq_len in range(1, max_sequence_size+1):
                 n_found += 1
                 key = "{0}-{1}".format(seq_len, n_found)
                 prime_n_e[key] = {"seq": prim_2_test, "pos": e_targeted[seq_len][i][1]}
-                print 'found at {0}-{1}'.format(seq_len, n_found),'prime', \
-                    prim_2_test,'position', e_targeted[seq_len][i][1]
+                print 'found at {0}'.format(key), 'prime', \
+                    prim_2_test, 'position', e_targeted[seq_len][i][1]
 
 
 prime_n_e_2_file(prime_n_e, work_dir, max_sequence_size, n_primes)

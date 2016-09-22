@@ -35,6 +35,8 @@ max_sequence_size = 12
 # filename containing digits of e
 #e_digit_file = 'e_digit_1000.txt'
 not_prime = ['0', '2', '4', '6', '8', '5']
+single_digit_primes = ['2', '3', '5', '7']
+
 
 e_digits = read_e_digits_file(max_prime, work_dir)
 
@@ -46,22 +48,37 @@ e_digits = read_e_digits_file(max_prime, work_dir)
 y = int(max_prime * .5)
 targets = [[[-1, -1] for i in range(y)] for j in range(1, max_sequence_size+2)]
 
+position = 1
+target_count = 1
+
+# for single digit target primes
+# add special case 2 is the only even prime number
+targets[1][1] = [2, 1]
+while (position < len(e_digits)):
+    num_e_digit = e_digits[position]
+    if (num_e_digit in single_digit_primes):
+        target_count += 1
+        seq_num = int(num_e_digit)
+        targets[1][target_count] = [seq_num, position + 1]
+        if (target_count <=10):
+            print 'seq_num',seq_num,'position', position+1
+    position += 1
+
+# for multi digit target primes
 position = 0
 target_count = 0
-
 while (position < len(e_digits)):
     num_e_digit = e_digits[position]
     if (num_e_digit not in not_prime):
         target_count += 1
         # print 'num_e_digit', num_e_digit
-        for seq_len in range(1, max_sequence_size+1):
+        for seq_len in range(2, max_sequence_size+1):
             try:
                 seq_num = int(e_digits[position - seq_len + 1:position+1])
                 # print 'seq_num', e_digits[position - seq_len + 1:position+1]
             except:
                 seq_num = -2
-            # print'seq_len', seq_len, 'count', target_count, 'seq_num', seq_num, \
-            #     'position',position
+            
             targets[seq_len][target_count] = [seq_num, position + 1]
     position += 1
 
