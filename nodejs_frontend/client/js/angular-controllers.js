@@ -1,6 +1,15 @@
 //CONTROLLERS
 
 
+function  set_seq_2_err_dec(resData) {
+    if (resData.error_code == 1){
+                resData.data = {};
+                resData.data.seq = resData.err_desc;
+            }
+    return resData;
+}
+
+
 // SETUP topMenuController
 primes_n_e.controller('topMenuController', function ($scope, sysStateFactory ){
         // inject $scope.sysState at root scope
@@ -28,7 +37,7 @@ primes_n_e.controller('singleController',
         singleFactory.getSingle($scope.getPrime, function (responseData){
             console.log('> ... RETURNED FROM FACTORY AFTER getSingle');
             $scope.primes = [];
-            $scope.primes.push(responseData);
+            $scope.primes.push(set_seq_2_err_dec(responseData));
         });
         // clear the form values
         $scope.getPrime = {};
@@ -55,10 +64,10 @@ primes_n_e.controller('uplodeController',
                     console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
                 $scope.primes = [];
                 for (var i = 0; i < resp.data.data.length; i++) {
-                    $scope.primes.push(resp.data.data[i]);
+                    $scope.primes.push(set_seq_2_err_dec(resp.data.data[i]));
                 }
                 } else {
-                    onsole.log('an error occured');
+                    onsole.log('an error occured '+ resp.data.error_code.err_desc);
                 }
             });
 

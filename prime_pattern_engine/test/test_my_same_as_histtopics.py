@@ -17,9 +17,9 @@ print 'len(my_e_10000)', len(my_e_10000),'len(ht_e_10000)', len(ht_e_10000)
 
 same = True
 for position in range(len(my_e_10000)-1):
-	my_digit_e = my_e_10000[position]
-	ht_digit_e = ht_e_10000[position]
-	if (my_digit_e != ht_digit_e):
-		print 'position', position,'my_digit_e', my_digit_e, 'ht_digit_e', ht_digit_e
-		same = False
-print 	'same? ', same 
+    my_digit_e = my_e_10000[position]
+    ht_digit_e = ht_e_10000[position]
+    if (my_digit_e != ht_digit_e):
+        print 'position', position, 'my_digit_e', my_digit_e, 'ht_digit_e', ht_digit_e
+        same = False
+print 'same? ', same

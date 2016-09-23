@@ -29,14 +29,14 @@
     <div id='table_container' >
         <table class="pure-table">
             <tr  >
-                <th>key</th>
+                <th>X-Y</th>
                 <th>prime number</th>
                 <th>location in e</th>
             </tr>
             <tr ng-repeat="prime in primes">
-                <td> <span ng-bind='prime.key'></span> </td>
-                <td> <span ng-bind='prime.seq'></span> </td>
-                <td> <span ng-bind='prime.pos'></span> </td>
+                <td> <span ng-bind='prime.xykey'></span> </td>
+                <td> <span ng-bind='prime.data.seq'></span> </td>
+                <td> <span ng-bind='prime.data.pos'></span> </td>
                 
             </tr>
         </table>

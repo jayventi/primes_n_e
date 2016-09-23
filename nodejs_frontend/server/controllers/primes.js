@@ -32,24 +32,40 @@ function lookupPrimeData(len, ord) {
     var maxLen = 12,
         maxOrd = 9;
     var results = {};
+    var error_code = 0;
+    var err_desc = '';
+    var key = len + '-' + ord;
+    var xykey = ord + '-' + len;
+    results.key = key;
+    results.xykey = xykey;
     if(len >= 1 && len <=maxLen
-       && ord >= 1 && ord <=maxOrd){
-        var key = len + '-' + ord;
-            results = primeData[key];
-            results.key = key;
-            console.log("in results = " + results["seq"]);
+       && ord >= 1 && ord <=maxOrd){        
+            results.data = primeData[key];
+            console.log("results = " + results.xykey);
     } else {
-        console.log("len or ord out of bounds" );
+        if (ord < 1 || ord > maxOrd){
+            err_desc = '0 > X <= ' + maxOrd.toString() ;
+            error_code = 1;
+        }
+        if(len < 1 || len > maxLen){
+            if (err_desc !== ''){
+                err_desc += ' and ';
+            }
+           err_desc += '0 > Y <= ' + maxLen.toString();
+           error_code = 1;
+        }
+        err_desc = 'err: '+ err_desc
+        console.log("err_desc: "+err_desc );
     }
+    results.error_code = error_code;
+    results.err_desc = err_desc;
     return results;
 }
 
 module.exports =  {
     getPrimeData: function (req, res) {
         var results = lookupPrimeData(req.body.len, req.body.ord);
-        if(results!={}){
         res.json(results);
-        }
     },
     getPrimeByUplode: function (req, res) {
         // TODO file housekeeping delete file after processing

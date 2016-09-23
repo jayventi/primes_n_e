@@ -4,25 +4,24 @@
         <h2  id="products">Locate Prime Numbers in  e</h2>
         <!-- <div class='duplicateError' ng-if='newCustomer.isDuplicate'>Error: Duplicate name!</div> -->
         <div id="primeform">
-            Length of prime: <input type='text' ng-model='getPrime.len'> <!-- </br></br> -->
-            Order in e:      <input type='text' ng-model='getPrime.ord'> 
+            X: order in e:      <input type='text' ng-model='getPrime.ord'>
+            Y: length of prime: <input type='text' ng-model='getPrime.len'> <!-- </br></br> --> 
             <input  class="button" type='Submit' value='submit' 
                 ng-click='getSingle()'>
         </div>
     </form>
                  
-    <div id='table_container' >
+    <div id='table_container'>
         <table class="pure-table">
             <tr  >
-                <th>key</th>
+                <th>X-Y</th>
                 <th>prime number</th>
                 <th>location in e</th>
             </tr>
             <tr ng-repeat="prime in primes">
-                <td> <span ng-bind='prime.key'></span> </td>
-                <td> <span ng-bind='prime.seq'></span> </td>
-                <td> <span ng-bind='prime.pos'></span> </td>
-                
+                <td> <span ng-bind='prime.xykey'></span> </td>
+                <td> <span ng-bind='prime.data.seq'></span> </td>
+                <td> <span ng-bind='prime.data.pos'></span> </td>                
             </tr>
         </table>
     </div>
