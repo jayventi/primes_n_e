@@ -50,9 +50,10 @@ primes_n_e.controller('uplodeController',
         Upload.upload({
                 url: 'http://localhost:8078/upload', //webAPI exposed to upload the file
                 data:{file:$scope.up.file} //pass file as data, should be user ng-model
-            }).then(function (resp) { //upload function returns a promise                
+            }).then(function (resp) { //upload function returns a promise
                 if(resp.data.error_code === 0){ //validate success
                     console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
+                $scope.primes = [];
                 for (var i = 0; i < resp.data.data.length; i++) {
                     $scope.primes.push(resp.data.data[i]);
                 }

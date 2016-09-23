@@ -8,7 +8,7 @@ var primeData = JSON.parse(
 
 // setup a csv to json converter
 var Converter = require("csvtojson").Converter;
-var converter = new Converter({noheader:true});
+
 
 // require multer to handle file uplode for adding a user
 var multer = require('multer');
@@ -60,8 +60,9 @@ module.exports =  {
             }
             // extract data from file and convert from csv to json
             console.log("Uploded file: ./uploads/"+req.file.filename );
+            var converter = new Converter({noheader:true});
             converter.fromFile("./uploads/"+req.file.filename,function(err,result){
-                ///console.log(result );
+                console.log(result );
                 // iterate through csv list extract parameters
                 primeRes = [];
                 for (var i = 0; i < result.length; i++) {
