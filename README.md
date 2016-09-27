@@ -35,7 +35,7 @@ To run the website no backend code is required the desired primes are stored in 
 
 <p>Backend components are not necessary, a prepared data file, prime_n_e_12-5.json, is provided in the /nodejs_frontend/server/datafiles/ directory.</p>
 
-1) Install Nodejs, versions 4.1.0, and 4.2.0 are known to work
+1) Install Nodejs, versions 4.1.0, 4.20 and 4.4.7 are known to work
 
 2) Install files, clone https://github.com/jayventi/primes_n_e.git repository, however only the /nodejs_frontend directory is required.
 
