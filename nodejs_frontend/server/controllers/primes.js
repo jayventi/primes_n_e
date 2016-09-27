@@ -1,6 +1,13 @@
 // this is our prime.js file located at /server/controllers/prime.js
 // note NO immediate function and the object that is returned
 
+// set prime parameter max boundary conditions, hard fixed minimum
+// to 1 in each case lesser values make no sense given context.
+// DOTO move system constants into separate js or yaml file called 
+// in server.js  
+var maxLen = 12,
+    maxOrd = 9;
+
 // load primeData from file
 var fs = require('fs');
 var primeData = JSON.parse(
@@ -29,20 +36,23 @@ var upload = multer({
                     }).single('file');
 
 function lookupPrimeData(len, ord) {
-    var maxLen = 12,
-        maxOrd = 9;
+    // looks up prime given parameters if they are within bounds
+    // otherwise builds human readable error message and returns
+    
     var results = {};
-    var error_code = 0;
-    var err_desc = '';
+    var error_code = 0,
+        err_desc = '';
     var key = len + '-' + ord;
     var xykey = ord + '-' + len;
     results.key = key;
-    results.xykey = xykey;
+    results.xykey = xykey;    
+    // if within allowable X Y bounds lookup prime
     if(len >= 1 && len <=maxLen
        && ord >= 1 && ord <=maxOrd){        
             results.data = primeData[key];
             console.log("results = " + results.xykey);
     } else {
+        // X Y parameters out of bounds, built error message
         if (ord < 1 || ord > maxOrd){
             err_desc = '0 > X <= ' + maxOrd.toString() ;
             error_code = 1;
@@ -54,11 +64,11 @@ function lookupPrimeData(len, ord) {
            err_desc += '0 > Y <= ' + maxLen.toString();
            error_code = 1;
         }
-        err_desc = 'err: '+ err_desc
+        err_desc = 'err: '+ err_desc;
         console.log("err_desc: "+err_desc );
+        results.error_code = error_code;
+        results.err_desc = err_desc;
     }
-    results.error_code = error_code;
-    results.err_desc = err_desc;
     return results;
 }
 
